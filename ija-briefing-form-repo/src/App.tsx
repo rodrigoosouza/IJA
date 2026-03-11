@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { supabase } from './lib/supabase'
-import { briefingSections, type BriefingData, countProgress, isBriefingComplete, getSectionProgress, getRequiredKeys, getPrefilledData } from './lib/briefing-sections'
+import { briefingSections, type BriefingData, countProgress, isBriefingComplete, getSectionProgress, getPrefilledData } from './lib/briefing-sections'
 import { generateBriefingPDF } from './lib/generate-pdf'
 
 type Screen = 'intro' | 'form' | 'success'
@@ -26,7 +26,6 @@ function App() {
   const progress = countProgress(data)
   const section = briefingSections[currentSection]
   const sectionProg = getSectionProgress(section, data)
-  const requiredKeys = getRequiredKeys()
   const currentSectionHasRequired = section.questions.some(q => q.required)
   const currentRequiredFilled = section.questions
     .filter(q => q.required)

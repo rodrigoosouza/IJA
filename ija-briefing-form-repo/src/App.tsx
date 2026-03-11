@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { supabase } from './lib/supabase'
 import { briefingSections, type BriefingData, countProgress, isBriefingComplete, getSectionProgress, getPrefilledData } from './lib/briefing-sections'
-import { generateBriefingPDF } from './lib/generate-pdf'
 
 type Screen = 'intro' | 'form' | 'success'
 
@@ -59,10 +58,6 @@ function App() {
     }
   }
 
-  const handleDownloadPDF = () => {
-    generateBriefingPDF(data)
-  }
-
   // ─── INTRO SCREEN ───
   if (screen === 'intro') {
     return (
@@ -94,8 +89,8 @@ function App() {
               <div className="text-xs text-gray-500 mt-1">Minutos</div>
             </div>
             <div className="bg-gray-900 border border-gray-800 rounded-lg p-3">
-              <div className="text-2xl font-bold text-orange-500">PDF</div>
-              <div className="text-xs text-gray-500 mt-1">Download</div>
+              <div className="text-2xl font-bold text-orange-500">44</div>
+              <div className="text-xs text-gray-500 mt-1">Perguntas</div>
             </div>
           </div>
 
@@ -140,16 +135,6 @@ function App() {
             <p className="text-gray-400 leading-relaxed">
               Suas respostas foram salvas com sucesso. Agora nossa equipe vai analisar cada detalhe para criar a estratégia ideal para o seu negócio.
             </p>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-5 space-y-3">
-            <p className="text-sm text-gray-300 font-medium">📄 Baixe uma cópia das suas respostas</p>
-            <button
-              onClick={handleDownloadPDF}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-orange-500/20"
-            >
-              Baixar PDF do Briefing
-            </button>
           </div>
 
           <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
@@ -300,21 +285,13 @@ function App() {
                 Próxima →
               </button>
             ) : (
-              <div className="flex gap-2">
-                <button
-                  onClick={handleDownloadPDF}
-                  className="px-4 py-2.5 rounded-lg text-sm font-medium bg-gray-900 border border-gray-800 text-gray-300 hover:border-gray-700 transition-colors"
-                >
-                  📄 PDF
-                </button>
-                <button
-                  onClick={handleSubmit}
-                  disabled={saving || !isBriefingComplete(data)}
-                  className="px-5 py-2.5 rounded-lg text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed bg-orange-500 hover:bg-orange-600 text-white hover:shadow-lg hover:shadow-orange-500/20"
-                >
-                  {saving ? 'Enviando...' : 'Enviar Briefing ✓'}
-                </button>
-              </div>
+              <button
+                onClick={handleSubmit}
+                disabled={saving || !isBriefingComplete(data)}
+                className="px-5 py-2.5 rounded-lg text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed bg-orange-500 hover:bg-orange-600 text-white hover:shadow-lg hover:shadow-orange-500/20"
+              >
+                {saving ? 'Enviando...' : 'Enviar Briefing ✓'}
+              </button>
             )}
           </div>
         </div>

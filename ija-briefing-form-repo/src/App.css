@@ -1,0 +1,23 @@
+/* IJA Briefing Form - Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030712;
+}
+
+/* Hide scrollbar for section pills */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom select styling */
+select option {
+  background-color: #111827;
+  color: #e5e7eb;
+}

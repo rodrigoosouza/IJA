@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd ija-briefing-form-repo && npm install && npm run build",
+  "outputDirectory": "ija-briefing-form-repo/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

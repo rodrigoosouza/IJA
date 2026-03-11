@@ -1,6 +1,6 @@
 {
-  "installCommand": "cd ija-briefing-form-repo && pnpm install",
-  "buildCommand": "cd ija-briefing-form-repo && pnpm run build",
+  "installCommand": "cd ija-briefing-form-repo && npm install --legacy-peer-deps",
+  "buildCommand": "cd ija-briefing-form-repo && npm run build",
   "outputDirectory": "ija-briefing-form-repo/dist",
   "framework": null,
   "rewrites": [

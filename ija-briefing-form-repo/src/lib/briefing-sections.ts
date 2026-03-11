@@ -82,7 +82,6 @@ export const briefingSections: BriefingSection[] = [
     icon: '📣',
     questions: [
       { key: 'como_conquista_clientes', label: 'Como conquista clientes hoje?', placeholder: '', required: true, type: 'textarea', prefilled: '100% por indicação de clientes satisfeitos', hint: 'Se mudou algo recentemente, atualize.' },
-      { key: 'redes_sociais', label: 'Como usa o Instagram hoje?', placeholder: '', required: false, type: 'textarea', prefilled: 'Instagram — uso básico', hint: 'Quantos seguidores? Posta com que frequência? Que tipo de conteúdo?' },
     ],
   },
   {

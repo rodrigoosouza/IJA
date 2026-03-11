@@ -137,12 +137,6 @@ function App() {
             </p>
           </div>
 
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
-            <p className="text-sm text-gray-400">
-              <span className="text-orange-400 font-medium">Próximos passos:</span> Em até 48h entraremos em contato para agendar a reunião de diagnóstico com base nas suas respostas.
-            </p>
-          </div>
-
           <p className="text-gray-600 text-xs">
             Instituto João Alves — Consultoria Empresarial
           </p>
